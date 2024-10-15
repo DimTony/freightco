@@ -38,6 +38,11 @@ const Landing = () => {
     tcnShipDate: "",
   });
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const {
+    isOpen: notifyIsOpen,
+    onOpen: notifyOnOpen,
+    onClose: notifyOnClose,
+  } = useDisclosure();
   const toast = useToast();
 
   const isTrackingByNumber = trackBy === "number";
@@ -226,6 +231,7 @@ const Landing = () => {
       <FetchedData
         handleCancelShipment={handleCancelShipment}
         fetchedData={fetchedData}
+        notifyOnOpen={notifyOnOpen}
       />
     ) : (
       <DefaultContent />
@@ -298,6 +304,19 @@ const Landing = () => {
           <ModalCloseButton />
           <ModalBody>
             <Text>Here</Text>
+          </ModalBody>
+        </ModalContent>
+      </Modal>
+
+      <Modal isOpen={notifyIsOpen} onClose={notifyOnClose}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Notification Enabled</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <Text>
+              Notifications will be forwarded to the contact info on file.
+            </Text>
           </ModalBody>
         </ModalContent>
       </Modal>

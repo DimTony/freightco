@@ -12,12 +12,15 @@ import React from "react";
 import logo from "../assets/images/freightco-high-resolution-logo-black-transparent.png";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 import { FaRegUserCircle } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <>
       <HStack bg="#ECAB55" h="4rem" px="2rem" justifyContent="space-between">
-        <Image src={logo} alt="freightco logo" w="3rem" h="auto" />
+        <Link to="/">
+          <Image src={logo} alt="freightco logo" w="3rem" h="auto" />
+        </Link>
         <HStack gap="3rem">
           <Menu>
             <MenuButton

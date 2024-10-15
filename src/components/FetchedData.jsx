@@ -25,7 +25,7 @@ import TrackingTable from "./TrackingTable";
 import TrackTable from "./TrackTable";
 import { formatShipDate } from "../utils/Functions";
 
-const FetchedData = ({ fetchedData, handleCancelShipment }) => {
+const FetchedData = ({ fetchedData, handleCancelShipment, notifyOnOpen }) => {
   return (
     <>
       <VStack w="100%" px="10rem">
@@ -97,7 +97,7 @@ const FetchedData = ({ fetchedData, handleCancelShipment }) => {
               Actions
             </MenuButton>
             <MenuList>
-              <MenuItem>Request Notication</MenuItem>
+              <MenuItem onClick={notifyOnOpen}>Request Notication</MenuItem>
               <MenuItem isDisabled={fetchedData.currentStep !== 4}>
                 Obtain Proof of Delivery
               </MenuItem>

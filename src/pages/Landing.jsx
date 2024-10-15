@@ -303,7 +303,10 @@ const Landing = () => {
           <ModalHeader>Shipment Canceled</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <Text>Here</Text>
+            <Text>
+              Your shipment is being canceled. You will be notified of its
+              return to sender.
+            </Text>
           </ModalBody>
         </ModalContent>
       </Modal>
